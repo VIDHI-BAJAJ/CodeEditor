@@ -1,10 +1,10 @@
 import React from 'react'
-import { Outlet } from 'react-router-dom';
+import HomePage from '../components/Homepage';
 
 export default function Fulllayout(){
     return(
         <>
-      <Outlet/>
+      <HomePage/>
       </>
     );
 }
