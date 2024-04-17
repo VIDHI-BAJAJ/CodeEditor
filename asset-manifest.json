@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/codeEditor/static/css/main.b6fc8df2.css",
+    "main.js": "/codeEditor/static/js/main.45744706.js",
+    "static/js/488.268bc0ba.chunk.js": "/codeEditor/static/js/488.268bc0ba.chunk.js",
+    "static/media/logo.png": "/codeEditor/static/media/logo.3f51ca2c7b183ab229c7.png",
+    "index.html": "/codeEditor/index.html",
+    "main.b6fc8df2.css.map": "/codeEditor/static/css/main.b6fc8df2.css.map",
+    "main.45744706.js.map": "/codeEditor/static/js/main.45744706.js.map",
+    "488.268bc0ba.chunk.js.map": "/codeEditor/static/js/488.268bc0ba.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b6fc8df2.css",
+    "static/js/main.45744706.js"
+  ]
+}
