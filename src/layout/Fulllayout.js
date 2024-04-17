@@ -5,7 +5,7 @@ import { Outlet } from 'react-router-dom';
 export default function Fulllayout(){
     return(
         <>
-        <nav className="bg-gray-900">
+        <div className="bg-gray-900">
         <div className="container mx-auto px-4 py-2 flex justify-between items-center">
          <img src= {Logo} className='h-14 w-24 ml-5'/>
           <ul className="flex space-x-8">
@@ -27,10 +27,9 @@ export default function Fulllayout(){
             <li>
   <a href="#" className="bg-blue-200 hover:bg-blue-200 text-gray-800 px-3 py-2 rounded-full">Sign Up</a>
 </li>
-
           </ul>
         </div>
-      </nav>
+      </div>
       <Outlet/>
       </>
     );
