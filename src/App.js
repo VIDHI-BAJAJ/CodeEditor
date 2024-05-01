@@ -1,10 +1,12 @@
 import './App.css';
-import FullLayout from './layout/Fulllayout';
-
+import { BrowserRouter } from 'react-router-dom';
+import Routing from './routecomponents/Routing'
 
 function App() {
   return (
-  <FullLayout/>
+    <BrowserRouter>
+      <Routing/>
+    </BrowserRouter>
   );
 }
 

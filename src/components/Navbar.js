@@ -1,23 +1,26 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 import Logo from '../Images/logo.png';
 import { Bars3BottomRightIcon, XMarkIcon } from '@heroicons/react/16/solid';
 
 const Navbar = () => {
+    const [isLoggedIn, setIsLoggedIn] = useState(false); // Track login state
+    const [open, setOpen] = useState(false);
+
     let Links = [
         { name: "Home", link: "/Homepage" },
         { name: "About", link: "/AboutUs" },
         { name: "Join Room", link: "/Joinroom" },
         { name: "Features", link: "/Feature" },
         { name: "ContactUs", link: "/ContactUs" },
-        { name: "Login", link: "/Login" }
+        { name: isLoggedIn ? "LogOut" : "Login", link: isLoggedIn ? "/Logout" : "/Login" } // Change link based on login state
     ];
-    let [open, setOpen] = useState(false);
 
     return (
-        <div className='shadow-md w-full fixed top-0 left-0'>
+        <div className='shadow-md w-full  top-0 left-0'>
             <div className='md:flex items-center justify-between bg-gray-900 py-4 md:px-10 px-7'>
                 <div>
-                    <img src={Logo} alt='CodeX' className='h-14 w-24'></img>
+                    <img src={Logo} alt='CodeX' className='h-14 w-32'></img>
                 </div>
                 {/* Menu icon */}
                 <div onClick={() => setOpen(!open)} className='absolute right-8 top-6 cursor-pointer md:hidden w-7 h-7'>
@@ -29,13 +32,15 @@ const Navbar = () => {
                     {
                         Links.map((link) => (
                             <li key={link.name} className='md:ml-8 md:my-0 my-7 font-semibold'>
-                                <a href={link.link} className='text-white duration-500'>{link.name}</a>
+                                <Link to={link.link} className='text-white duration-500'>{link.name}</Link> {/* Use Link instead of anchor tag */}
                             </li>
                         ))
                     }
-                    <li className='md:ml-8 font-semibold'>
-                        <a href="/SignUp" className='btn bg-blue-200 text-black px-3 py-1 rounded duration-500 md:static'>SignUp</a>
-                    </li>
+                    {!isLoggedIn && (
+                        <li className='md:ml-8 font-semibold'>
+                            <Link to="/SignUp" className='btn bg-blue-200 text-black px-3 py-1 rounded duration-500 md:static'>SignUp</Link>
+                        </li>
+                    )}
                 </ul>
             </div>
         </div>
